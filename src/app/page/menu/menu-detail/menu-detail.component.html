@@ -1,0 +1,74 @@
+<app-header></app-header>
+<div class="container" *ngIf="item" style="margin-top: 150px;">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="product-detail">
+          <div class="product-images">
+            <img [src]="item.image" alt="Product Image" class="main-image" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="product-info">
+          <h2>{{ item.name }}</h2>
+          <p><span>Price:</span> {{ item.price | number : "1.0-0" }} ₫</p>
+          <p><span>Type:</span> {{ item.type }}</p>
+          <div class="cart">
+            <button
+              (click)="addToCart(item)"
+              routerLink="/cart"
+              class="order-btn"
+            >
+              Mua ngay
+            </button>
+            <button (click)="addToCart(item)" class="cart-btn">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="product-content" *ngIf="item">
+          <ng-container>
+            <h2>Đánh giá {{item.name}}</h2>
+            <p class="content" *ngIf="!showFullContent">
+              {{item.description}}
+            </p>
+            </ng-container>
+        </div>
+  
+        <div class="comment-group">
+          <form (ngSubmit)="submitComment()">
+            <div class="form-group">
+              <label for="commentText">Câu hỏi của bạn</label>
+              <textarea
+                class="form-control"
+                id="commentText"
+                name="commentText"
+                rows="3"
+                required
+                [(ngModel)]="newComment.text"
+              ></textarea>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button type="submit" class="btn">Gửi</button>
+            </div>
+          </form>
+  
+          <div class="comment">
+            <h2 class="comment-title">Trao đổi</h2>
+            <div *ngFor="let comment of item.comments" class="comment-box">
+              <h3 class="comment-user">{{ comment.username }}</h3>
+              <p class="comment-content">{{ comment.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="containers">
+    <app-footer></app-footer>
+  </div>
+  

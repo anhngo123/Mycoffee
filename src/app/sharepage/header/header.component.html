@@ -1,0 +1,69 @@
+<header class="header">
+  <div id="menu-btn" class="fas fa-bars"></div>
+
+  <a routerLink="" class="logo" style="margin-left: -50px"
+    >coffee <i class="fas fa-mug-hot"></i
+  ></a>
+
+  <nav class="navbar" style="font-size: 12px">
+    <a routerLink="" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a routerLink="/menu" class="nav-link">Menu</a>
+    <a href="#review" class="nav-link">Review</a>
+    <a routerLink="/blog" class="nav-link">Blog</a>
+    <a routerLink="/voucher-page" class="nav-link">Voucher</a>
+    <a routerLink="/store" class="nav-link">Store</a>
+  </nav>
+
+  <div
+    *ngIf="user$ | async as user; else loginButton"
+    class="d-flex align-items-center"
+  >
+    <div class="dropdown" (click)="toggleDropdown()">
+      <button
+        id="dropdownButton"
+        class="btn btn-link dropdown-toggle"
+        type="button"
+      >
+        <span class="user-name pr-2">{{ displayName }}</span>
+      </button>
+      <ul
+        id="dropdownMenu"
+        class="dropdown-menu"
+        [ngClass]="{ show: isDropdownOpen }"
+      >
+        <li *ngIf="!isAdminUser">
+          <a class="dropdown-item" routerLink="/dashboard">Trang cá nhân</a>
+        </li>
+        <li *ngIf="isAdminUser">
+          <a class="dropdown-item" routerLink="/admin">Trang Admin</a>
+        </li>
+        <li>
+          <a (click)="logout()" class="dropdown-item">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Conditionally display a bell icon for admins -->
+    <div *ngIf="isAdminUser" class="admin-icon ml-3" style="margin-left: 30px">
+      <a class="btn btn-link" style="margin-right: -90px">
+        <i class="fas fa-bell" routerLink="/notification"></i>
+        <div class="badge badge-danger" style="color: #000">
+          {{ notificationCount }}
+        </div>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="!isAdminUser" class="cart-icon ml-3" style="margin-right: -90px">
+    <a routerLink="/cart" class="btn btn-link">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="badge badge-info" style="color: #000">
+        {{ cartItemCount }}
+      </div>
+    </a>
+  </div>
+
+  <ng-template #loginButton>
+    <a routerLink="/signin" class="btn btn-primary">Đăng nhập</a>
+  </ng-template>
+</header>

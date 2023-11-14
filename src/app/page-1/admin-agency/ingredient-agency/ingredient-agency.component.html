@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-nav></app-nav>
+    </div>
+    <div class="col-md-10" style="margin-top: 75px;">
+        <h2>Quản lý nguyên liệu</h2>
+        <form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tên nguyên liệu</th>
+                        <th>Số lượng</th>
+                        <th>Ngày xuất</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="" id="">
+                        </td>
+                        <td>
+                            <input type="text" name="" id="">
+                        </td>
+                        <td>
+                            <input type="date" name="" id="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+        </form>
+    
+        <h2>Danh sách nguyên liệu</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tên nguyên liệu</th>
+                    <th>Số lượng</th>
+                    <th>Ngày nhập</th>
+                    <th>Xuất xứ</th>
+                    <th>Hạn sử dụng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ItemList" (click)="selectItem(item)" style="cursor: pointer;">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.importDate }}</td>
+                    <td>{{ item.origin }}</td>
+                    <td>{{ item.exp }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

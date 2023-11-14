@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-md-2">
+    <app-nav-sidebar></app-nav-sidebar>
+  </div>
+  <div class="col-md-10" style="margin-top: 75px">
+    <h2>Quản lý nguyên liệu</h2>
+    <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
+      <div class="mb-3">
+        <label for="itemName" class="form-label">Tên nguyên liệu:</label>
+        <input
+          type="text"
+          id="itemName"
+          name="itemName"
+          class="form-control"
+          [(ngModel)]="ItemName"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="ItemQuantity" class="form-label">Số lượng:</label>
+        <input
+          type="number"
+          id="ItemQuantity"
+          name="ItemQuantity"
+          class="form-control"
+          [(ngModel)]="ItemQuantity"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="ItemImportDate" class="form-label">Ngày nhập:</label>
+        <input
+          type="date"
+          id="ItemImportDate"
+          name="ItemImportDate"
+          class="form-control"
+          [(ngModel)]="ItemImportDate"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="ItemOrigin" class="form-label">Xuất xứ:</label>
+        <input
+          type="text"
+          id="ItemOrigin"
+          name="ItemOrigin"
+          class="form-control"
+          [(ngModel)]="ItemOrigin"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="ItemExp" class="form-label">Hạn sử dụng:</label>
+        <input
+          type="date"
+          id="ItemExp"
+          name="ItemExp"
+          class="form-control"
+          [(ngModel)]="ItemExp"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">
+        {{ selectedItem ? "Sửa nguyên liệu" : "Thêm nguyên liệu" }}
+      </button>
+    </form>
+
+    <h2>Danh sách nguyên liệu</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tên nguyên liệu</th>
+          <th>Số lượng</th>
+          <th>Ngày nhập</th>
+          <th>Xuất xứ</th>
+          <th>Hạn sử dụng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of ItemList"
+          (click)="selectItem(item)"
+          style="cursor: pointer"
+        >
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.importDate }}</td>
+          <td>{{ item.origin }}</td>
+          <td>{{ item.exp }}</td>
+          <td class="group-button">
+            <button class="btn btn-outline-danger" (click)="deleteItem(item)">
+              Xoá
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

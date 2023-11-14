@@ -1,0 +1,118 @@
+<div class="row">
+  <div class="col-md-2">
+    <app-nav-sidebar></app-nav-sidebar>
+  </div>
+  <div class="col-md-10" style="margin-top: 75px">
+    <div class="container" style="margin-top: 20px">
+      <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
+        <div class="row mb-3">
+          <label for="ItemName" class="col-sm-2 col-form-label"
+            >Tên Công Thức</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="ItemName"
+              name="ItemName"
+              [(ngModel)]="ItemName"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div *ngFor="let item of ItemIngredient; let i = index">
+            <label for="ItemIngredient" class="col-sm-2 col-form-label"
+              >Nguyên Liệu {{ i + 1 }}</label
+            >
+            <input
+              class="ef"
+              [(ngModel)]="item.value"
+              placeholder="Dòng {{ i + 1 }}"
+              name="ItemIngredient-value-{{ item.id }}"
+              [ngModelOptions]="{ updateOn: 'blur' }"
+            />
+            <input
+              class="ef"
+              [(ngModel)]="item.quantity"
+              placeholder="Dòng {{ i + 1 }}"
+              name="ItemIngredient-quantity-{{ item.id }}"
+              [ngModelOptions]="{ updateOn: 'blur' }"
+            />
+            <label for="">ml/g</label>
+            <button class="ab" (click)="removeInput(i)" type="button">
+              Xóa
+            </button>
+          </div>
+
+          <button class="ac" (click)="addInput()" type="button">
+            Thêm dòng input mới
+          </button>
+        </div>
+        <div class="row mb-3">
+          <label for="ItemPrice" class="col-sm-2 col-form-label"
+            >Cách làm</label
+          >
+          <div class="col-sm-10">
+            <textarea
+              type="text"
+              class="form-control"
+              id="ItemInstructions"
+              name="ItemInstructions"
+              [(ngModel)]="ItemInstructions"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-end">
+          <button type="submit" class="btn">
+            {{ selectedItem ? "Sửa công thức" : "Thêm công thức" }}
+          </button>
+        </div>
+      </form>
+
+      <div>
+        <h5 class="text-danger" style="font-size: 20px; margin-top: 10px">
+          Danh sách công thức
+        </h5>
+        <div class="card p-3 shadow">
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr style="text-align: center">
+                  <th scope="col">Tên công thức</th>
+                  <th scope="col">Nguyên liệu</th>
+                  <th scope="col">Cách làm</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let item of ItemList"
+                  (click)="selectItem(item)"
+                  style="text-align: center; cursor: pointer"
+                >
+                  <td>{{ item.name }}</td>
+                  <td>
+                    <ul class="ingredient-list">
+                      <li *ngFor="let ingredient of item.ingredients">
+                        {{ ingredient.value }} {{ ingredient.quantity }} ml/g
+                      </li>
+                    </ul>
+                  </td>
+                  <td>{{ item.instructions }}</td>
+                  <td class="group-button">
+                    <button
+                      class="btn btn-outline-danger"
+                      (click)="deleteItem(item)"
+                    >
+                      Xoá
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

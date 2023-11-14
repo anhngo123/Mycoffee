@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "na-coffee": {
+      "hosting": {
+        "coffee": [
+          "na-coffee"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "na-coffee"
+  }
+}

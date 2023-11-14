@@ -1,0 +1,128 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right bottom,
+    rgb(211, 162, 2),
+    rgb(110, 27, 3)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right bottom,
+    rgb(179, 138, 2),
+    rgb(96, 23, 2)
+  );
+}
+.nav-item {
+  font-size: 20px;
+  margin-top: 30px;
+}
+.breadcrumb-item a:hover {
+  color: rgb(255, 204, 0);
+  text-decoration: underline;
+}
+.breadcrumb-item a {
+  cursor: pointer;
+
+  color: #004ffb;
+  text-decoration: none !important;
+}
+
+.nav-item i {
+  margin-right: 30px;
+}
+.nav-item a {
+  color: #eb5726;
+  font-size: 17px;
+}
+
+.nav-item a:hover {
+  color: #d04212;
+}
+
+.h2 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.edit-btn {
+  margin-bottom: -2px;
+  height: 30px;
+  border: none;
+  background: #ff4000;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block; /* Đảm bảo rằng nút chỉ có chiều rộng bằng nội dung của nó */
+  margin-left: 245px;
+  width: 184px;
+}
+
+.edit-btn:hover {
+  background-color: #d04212;
+}
+
+.edit-form {
+  width: 630px;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form .label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.edit-form input {
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.edit-form button {
+  padding: 8px 16px;
+  background-color: #ff4000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-form button:hover {
+  background-color: #d04212;
+}
+.no-top {
+  padding-top: 0 !important;
+}
+
+.no-bottom {
+  padding-bottom: 0 !important;
+}
+section {
+  padding: 100px 0 100px 0;
+  position: relative;
+}
+.ab {
+  font-size: 14px;
+}
+app-footer {
+  background: #000;
+}
+
+.cd {
+  margin-top: 60px;
+}

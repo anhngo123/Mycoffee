@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col-md-2">
+    <app-nav-sidebar></app-nav-sidebar>
+  </div>
+  <div class="col-md-10" style="margin-top: 75px">
+    <h2>Quản lý nhân sự</h2>
+    <form (ngSubmit)="updateItem()">
+      <div class="mb-3">
+        <label for="itemName" class="form-label">Tên nhân sự:</label>
+        <input
+          type="text"
+          id="itemName"
+          name="itemName"
+          class="form-control"
+          [(ngModel)]="displayName"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Số điện thoại:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          class="form-control"
+          [(ngModel)]="phone"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Địa chỉ:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          class="form-control"
+          [(ngModel)]="address"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="role" class="form-label">Vai trò:</label>
+        <select id="role" class="form-select" name="role" [(ngModel)]="role">
+          <option>user</option>
+          <option>admin</option>
+          <option>admin-agency</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">sửa nhân sự</button>
+    </form>
+
+    <h2>Danh sách nhân sự</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tên nhân sự</th>
+          <th>Số điện thoại</th>
+          <th>Email</th>
+          <th>Địa chỉ</th>
+          <th>Vai trò</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of ItemList"
+          (click)="selectItem(item)"
+          style="cursor: pointer"
+        >
+          <td>{{ item.name }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

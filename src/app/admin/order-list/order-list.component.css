@@ -1,0 +1,207 @@
+/* CSS cho các nút sắp xếp */
+.sort-button {
+  background-color: #0d6efd; /* Màu cam */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền khi di chuột qua */
+}
+
+.sort-button:hover {
+  background-color: #00ce2d; /* Màu xanh lá cây sáng khi di chuột qua */
+}
+
+.order-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  left: 120px;
+}
+.btn {
+  position: relative;
+  left: 320px;
+}
+
+.order-container {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  width: 500px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền khi di chuột qua */
+}
+.order-container :hover {
+  background-color: rgb(255, 208, 0);
+}
+.order-container h1 {
+  font-size: 20px; /* Cỡ chữ lớn hơn cho tiêu đề */
+  margin-top: 0; /* Loại bỏ khoảng trống trên cùng */
+  border-bottom: 1px solid #ccc; /* Đường kẻ dưới tiêu đề */
+  padding-bottom: 10px;
+  color: #f44336;
+  text-align: center;
+}
+
+/* CSS cho phần chi tiết đơn hàng */
+.order-item {
+  position: relative;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền khi di chuột qua */
+}
+
+.order-item p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.order-item button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin-left: 170px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* CSS cho phần chi tiết đơn hàng */
+.order-details {
+  position: fixed;
+  top: 50%; /* Đặt vị trí giữa theo chiều dọc */
+  right: 20px; /* Đặt vị trí cách bên phải */
+  transform: translateY(-50%); /* Để căn giữa theo chiều dọc */
+  width: 350px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 27px; /* Tăng khoảng cách từ nội dung đến biên */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Tăng độ blur cho shadow */
+  border-radius: 10px;
+  z-index: 6;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền khi di chuột qua */
+  font-size: 16px;
+}
+
+/* Tùy chỉnh nút "Đóng chi tiết" */
+.order-details button {
+  background-color: #f44336; /* Màu đỏ */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.order-details :hover {
+  background-color: rgb(255, 208, 0);
+}
+
+.order-container button:hover {
+  background-color: #00ce2d; /* Màu đỏ sáng khi di chuột qua */
+}
+
+.order-details h2 {
+  font-size: 16px; /* Cỡ chữ lớn hơn cho tiêu đề */
+  margin-top: 0; /* Loại bỏ khoảng trống trên cùng */
+  border-bottom: 1px solid #ccc; /* Đường kẻ dưới tiêu đề */
+  padding-bottom: 10px;
+  color: #f44336;
+  text-align: center;
+}
+
+.order-details ul li {
+  list-style-type: none;
+}
+
+.pagination {
+  margin-left: 620px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .btn {
+    margin-left: 110px !important;
+  }
+  .sort-button {
+    font-size: 10px;
+  }
+  .order-item p {
+    font-size: 13px;
+  }
+  .order-container {
+    width: 350px;
+    margin: 10px;
+  }
+  .order-item button {
+    font-size: 10px;
+    padding: 6px 12px;
+    margin-left: 120px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sort-button {
+    font-size: 9px;
+  }
+  .btn {
+    margin-left: 35px !important;
+  }
+  .order-item p {
+    font-size: 12px;
+  }
+  .order-container {
+    width: 300px;
+    margin: 5px;
+  }
+  .order-item button {
+    font-size: 8px;
+    padding: 5px 10px;
+    margin-left: 100px;
+  }
+  .pagination {
+    font-size: 10px;
+    margin-right: 50px;
+  }
+}
+/* Điều chỉnh giao diện cho màn hình có chiều rộng tối đa là 425px */
+@media only screen and (max-width: 430px) {
+  .sort-button {
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  .order-item button {
+    margin-left: 155px;
+  }
+  .order-container {
+    width: 400px;
+  }
+
+  .order-container p {
+    font-size: 15px;
+  }
+
+  .order-details {
+    position: unset;
+    width: 400px;
+    margin-left: 13px; /* Tạo khoảng cách trên thông tin chi tiết đơn hàng */
+  }
+
+  .pagination {
+    margin-left: 20px; /* Canh giữa phân trang */
+    font-size: 9px;
+  }
+  .order-row {
+    margin-left: 80px;
+  }
+}

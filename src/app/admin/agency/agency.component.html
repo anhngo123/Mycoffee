@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col-md-2">
+    <app-nav-sidebar></app-nav-sidebar>
+  </div>
+  <div class="col-md-10" style="margin-top: 100px">
+    <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
+      <div class="mb-3">
+        <label for="ItemName" class="col-sm-2 col-form-label"
+          >Tên chi nhánh</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="ItemName"
+            name="ItemName"
+            [(ngModel)]="ItemName"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="ItemQuantity" class="col-sm-2 col-form-label"
+          >Địa chỉ</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="ItemAddress"
+            name="ItemAddress"
+            [(ngModel)]="ItemAddress"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="ItemQuantity" class="col-sm-2 col-form-label"
+          >Số điện thoại</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="ItemContact"
+            name="ItemContact"
+            [(ngModel)]="ItemContact"
+          />
+        </div>
+      </div>
+      <div class="col-12 d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">
+          {{ selectedItem ? "Sửa sản phẩm" : "Thêm sản phẩm" }}
+        </button>
+      </div>
+    </form>
+
+    <div>
+      <h5 class="text-primary" style="font-size: 20px; margin-top: 10px">
+        Danh sách chi nhánh
+      </h5>
+      <div class="card p-3 shadow">
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr style="text-align: center">
+                <th scope="col">Tên chi nhánh</th>
+                <th scope="col">Địa chỉ</th>
+
+                <th scope="col">SĐT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let item of ItemList"
+                (click)="selectItem(item)"
+                style="text-align: center; cursor: pointer"
+              >
+                <td>{{ item.name }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.contact }}</td>
+                <td class="group-button">
+                  <button
+                    class="btn btn-outline-danger"
+                    (click)="deleteItem(item)"
+                  >
+                    Xoá
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

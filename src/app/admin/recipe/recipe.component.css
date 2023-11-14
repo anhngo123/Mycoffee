@@ -1,0 +1,99 @@
+.btn {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00ce2d;
+}
+
+.group-button {
+  display: flex;
+  flex-direction: column;
+}
+/* CSS cho bảng danh sách công thức */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* CSS cho cột Nguyên liệu */
+.table td.ingredients {
+  text-align: left; /* Căn trái cho nội dung cột Nguyên liệu */
+  border: 1px solid #ccc; /* Thêm đường biên cho cột Nguyên liệu */
+}
+
+/* CSS cho nút Xoá */
+.table .group-button button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table .group-button button:hover {
+  background-color: #00ce2d; /* Màu đỏ sáng khi di chuột qua */
+}
+
+.ac {
+  width: 270px;
+  margin-left: 233px;
+  background-color: #0d6efd;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền khi di chuột qua */
+}
+.ac:hover {
+  background-color: #00ce2d; /* Màu đỏ sáng khi di chuột qua */
+}
+
+.ab {
+  width: 50px;
+
+  background-color: #0d6efd;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền khi di chuột qua */
+}
+.ab:hover {
+  background-color: #00ce2d; /* Màu đỏ sáng khi di chuột qua */
+}
+.ef {
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* CSS cho danh sách công thức */
+.ingredient-list {
+  list-style: none; /* Tắt chấm dòng */
+  padding-left: 0; /* Loại bỏ khoảng cách từ biên trái */
+}
+
+/* CSS cho mục danh sách */
+.ingredient-list li {
+  margin-bottom: 5px; /* Tạo khoảng cách giữa các mục danh sách */
+  text-align: center;
+  width: ̀̀40px; /* Đặt độ rộng cố định cho mục danh sách */
+  display: block; /* Hiển thị mục danh sách cùng một hàng */
+  padding: 5px; /* Tạo khoảng cách bên trong mục danh sách */
+}

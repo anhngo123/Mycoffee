@@ -1,0 +1,22 @@
+body {
+  position: relative;
+  top: 120px;
+}
+h5 .icon-hover:hover {
+  border-color: #3b71ca !important;
+  background-color: white !important;
+}
+
+.icon-hover:hover i {
+  color: #3b71ca !important;
+}
+
+/* Áp dụng cho sản phẩm khi hover */
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi hover */
+  transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+  transition: box-shadow 0.3s, transform 0.3s; /* Thời gian chuyển đổi */
+  cursor: pointer;
+}
+
+

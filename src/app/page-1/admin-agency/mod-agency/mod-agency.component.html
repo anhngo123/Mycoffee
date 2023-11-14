@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-nav></app-nav>
+    </div>
+    <div class="col-md-10" style="margin-top: 75px;">
+        <h2>Quản lý sản phẩm</h2>
+        <form (ngSubmit)="selectedItem ? updateItem() : addItem()">
+            <div class="mb-3">
+                <div class="col-sm-10">
+                    <label for="itemName" class="form-label">Tên sản phẩm:</label>
+                    <input type="text" id="itemName" name="itemName" class="form-control" [(ngModel)]="ItemName" required>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <div class="col-sm-10">
+                    <label for="itemPrice" class="form-label">Giá sản phẩm:</label>
+                    <input type="number" id="itemPrice" name="itemPrice" class="form-control" [(ngModel)]="ItemPrice" required>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <div class="col-sm-10">
+                    <label for="itemType" class="form-label">Loại sản phẩm:</label>
+                    <input type="text" id="itemType" name="itemType" class="form-control" [(ngModel)]="ItemType" required>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <div class="col-sm-10">
+                    <label for="itemQuantity" class="form-label">Số lượng:</label>
+                    <input type="number" id="itemQuantity" name="itemQuantity" class="form-control" [(ngModel)]="ItemQuantity" required>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <div class="col-sm-10">
+                    <label for="itemImage" class="form-label">Hình ảnh:</label>
+                    <input type="text" id="itemImage" name="itemImage" class="form-control" [(ngModel)]="ItemImage" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="col-sm-10">
+                    <label for="itemDescription" class="form-label">Mô tả:</label>
+                    <textarea type="text" id="itemDescription" name="itemDescription" class="form-control" [(ngModel)]="ItemDescription" required></textarea>
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">{{ selectedItem ? 'Sửa sản phẩm' : 'Thêm sản phẩm' }}</button>
+        </form>
+
+        <h2>Danh sách sản phẩm</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá sản phẩm</th>
+                    <th>Loại sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Chi nhánh</th>
+                    <th>Mô tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ItemList" (click)="selectItem(item)" style="cursor: pointer;">
+                    <td><img src="{{ item.image }}" alt="" style="height: 100px; width: 100px;"></td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.branch }}</td>
+                    <td>{{ item.description }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

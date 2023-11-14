@@ -1,0 +1,353 @@
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card {
+  transition: all 0.2s ease-in-out;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #000;
+}
+
+.card-main {
+  position: relative;
+  width: 294px;
+  height: 344px;
+}
+
+.label {
+  position: absolute;
+  bottom: 59px;
+  left: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  z-index: 2;
+  line-height: 100%;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px 8px;
+}
+
+.label-green {
+  background: #5cb85c;
+}
+
+.image img:hover {
+  transform: scale(0.9);
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0.7;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 25px 15px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 5px 25px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 25px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5 ease;
+}
+
+.cart-item {
+  text-align: center;
+  line-height: 45px;
+  background-color: #111;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  position: relative;
+  top: -30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.cart-item ul {
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item ul li {
+  display: inline-block;
+  list-style-type: none;
+  position: relative;
+}
+
+.cart-item ul li::after {
+  content: "";
+  width: 1px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  left: -2px;
+  top: 10px;
+}
+
+.cart-item ul li:first-child::after {
+  display: none;
+}
+
+.cart-item ul li a {
+  padding: 0 18px;
+  color: #ccc;
+}
+
+.cart-item ul li a:hover {
+  color: #fa0;
+}
+
+.card:hover .cart-item {
+  opacity: 1;
+  top: 0;
+}
+
+.p {
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 2px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.p img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.p img:hover {
+  opacity: 1;
+}
+
+.card:hover .product-container {
+  opacity: 1;
+  right: 10px;
+}
+
+.content {
+  padding: 12px 0;
+  text-align: center;
+}
+
+.content a {
+  font-size: 16px;
+  color: #555;
+  font-weight: 700;
+  text-transform: capitalize;
+  transition: all 0.3s;
+}
+
+.content a:hover {
+  color: #fa0;
+  text-decoration: none;
+}
+
+.rating svg {
+  color: #fa0;
+  line-height: 22px;
+  margin: 0 2px;
+  font-size: 12px;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+.content .money {
+  font-size: 20px;
+  color: #fa0;
+  font-weight: 700;
+  font-style: italic;
+  margin-right: 6px;
+}
+
+.content .old-price {
+  line-height: 18px;
+  text-decoration: line-through;
+  color: #888;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sort-button {
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px 10px 0;
+  border-radius: 10px;
+}
+
+.sort-button:hover {
+  background-color: #2980b9;
+}
+
+.dark-scheme {
+  background-color: #ffffff;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+/* .dark-scheme section {
+  background: #000;
+} */
+section {
+  /* padding: 100px 0 100px 0; */
+  position: relative;
+  padding-bottom: 50px;
+}
+.de-title {
+  display: inline-block;
+  text-align: center;
+}
+
+.s1 {
+  position: absolute;
+  top: 323px;
+  left: 685px;
+}
+.s2 {
+  position: absolute;
+  top: 482px;
+  left: 729px;
+}
+
+h5.s1 {
+  font-size: 120px;
+  font-family: var(--deco-font);
+  margin: 0;
+  font-weight: 400;
+}
+.dark-scheme h5 h2 {
+  color: #ffffff;
+}
+.de-title h2 {
+  letter-spacing: 10px;
+  font-size: 32px;
+  margin-top: -50px;
+}
+h2 {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 42px;
+  text-transform: uppercase;
+  margin-top: 0;
+  font-family: var(--title-font);
+  font-weight: bold;
+  color: #ffffff;
+}
+.id-color-2,
+span.id-color-2 {
+  color: #ca8e46;
+}
+.id-color-1,
+span.id-color-1 {
+  color: #f40938;
+}
+
+.carousel-inner img {
+  height: 700px;
+}
+
+.form-outline input {
+  background-color: transparent;
+  color: #fff;
+}
+.form-outline {
+  background-color: none;
+}
+.btn {
+  background-color: #ca8e46;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  line-height: 1.5;
+}
+
+/* Áp dụng kiểu cho phần container của biểu mẫu tìm kiếm */
+.search-results {
+  /* Thêm các kiểu cho phần container, ví dụ: màu nền, padding, viền, v.v. */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  position: absolute;
+  z-index: 3;
+  top: 80px;
+  left: 530px;
+  opacity: 0.9;
+}
+
+/* Kiểu danh sách các kết quả tìm kiếm */
+.search-results ul {
+  list-style: none; /* Loại bỏ dấu đầu dòng danh sách */
+  padding: 0; /* Loại bỏ padding mặc định */
+}
+
+/* Kiểu từng mục kết quả tìm kiếm */
+.search-results ul li :hover {
+  background-color: #ff9900;
+
+  /* Điều chỉnh giá trị margin-top theo nhu cầu */
+  /* Thêm các kiểu khác cho từng mục kết quả nếu cần */
+}
+
+/* Kiểu cho các liên kết bên trong kết quả tìm kiếm */
+.search-results ul li a {
+  text-decoration: none; /* Loại bỏ gạch chân cho liên kết */
+  /* Thêm kiểu cho liên kết, ví dụ: màu sắc, hiệu ứng hover, v.v. */
+
+  color: #7e7c7c;
+  display: flex;
+  align-items: center;
+}
+
+/* Kiểu cho hình ảnh trong từng kết quả tìm kiếm */
+.search-results ul li a img {
+  margin-right: 10px;
+}
+#search-input::placeholder {
+  color: #ffffff; /* Màu của placeholder */
+}
+
+/* Kiểu cho văn bản trong từng kết quả tìm kiếm */
+.search-results ul li a span {
+  /* Thêm kiểu cho văn bản, ví dụ: kích thước phông chữ, màu sắc, v.v. */
+  font-style: italic;
+  color: #ca8e46;
+}
+
+@media (max-width: 768px) {
+  .sort-buttons {
+    text-align: center; /* Center-align the sort buttons */
+    margin-bottom: 20px;
+  }
+
+  .col-md-3 {
+    width: 100%; /* Make each item take up the full width on smaller screens */
+    margin-bottom: 20px;
+  }
+  .row {
+    margin-left: 50px;
+  }
+}

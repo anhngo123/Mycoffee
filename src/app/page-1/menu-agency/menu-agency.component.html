@@ -1,0 +1,143 @@
+<app-header-agency></app-header-agency>
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Heading -->
+    <div class="bg-secondary mb-4">
+      <div class="container py-4">
+        <h3 class="text-white mt-2">Coffee</h3>
+        <!-- Breadcrumb -->
+        <nav class="d-flex mb-2">
+          <h6 class="mb-0">
+            <a href="" class="text-white-50">Home</a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a href="/menu" class="text-white">Menu</a>
+          </h6>
+        </nav>
+        <!-- Breadcrumb -->
+      </div>
+    </div>
+    <!-- Heading -->
+  </header>
+
+  <!-- sidebar + content -->
+  <section class="">
+    <div class="container">
+      <div class="row">
+        <!-- content -->
+        <div class="col-lg-12">
+          <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
+            <strong class="d-block py-2"> Items found </strong>
+            <div class="ms-auto">
+              <select class="form-select d-inline-block w-auto border pt-1">
+                <option value="0">Best match</option>
+                <option value="1">Recommended</option>
+                <option value="2">High rated</option>
+                <option value="3">Randomly</option>
+              </select>
+              <div class="btn-group shadow-0 border">
+                <a href="#" class="btn btn-light" title="List view">
+                  <i class="fa fa-bars fa-lg"></i>
+                </a>
+                <a href="#" class="btn btn-light active" title="Grid view">
+                  <i class="fa fa-th fa-lg"></i>
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-12" *ngFor="let item of items | async">
+              <div class="card shadow-0 border rounded-3">
+                <div class="card-body">
+                  <div class="row g-0">
+                    <div
+                      class="col-xl-3 col-md-4 d-flex justify-content-center"
+                    >
+                      <div
+                        class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0"
+                      >
+                        <img
+                          src="{{ item.image }}"
+                          routerLink="/detail"
+                          class="w-100"
+                          style="cursor: pointer"
+                        />
+                        <a>
+                          <div class="hover-overlay">
+                            <div
+                              class="mask"
+                              style="
+                                background-color: rgba(253, 253, 253, 0.15);
+                              "
+                            ></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="col-xl-6 col-md-5 col-sm-7"
+                      (click)="goToItemDetail(item)"
+                    >
+                      <h5
+                        (click)="goToItemDetail(item)"
+                        style="cursor: pointer"
+                      >
+                        {{ item.name }}
+                      </h5>
+                      <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <span class="ms-1"> 5 </span>
+                        </div>
+                        <!-- <span class="text-muted">154 orders</span> -->
+                      </div>
+
+                      <p class="text mb-4 mb-md-0">
+                        {{ item.description }}
+                      </p>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-5">
+                      <div class="d-flex flex-row align-items-center mb-1">
+                        <h4 class="mb-1 me-1">{{ item.price }}</h4>
+                        <span
+                          class="text-danger"
+                          style="text-decoration: line-through"
+                          ><s>{{ item.price }}</s></span
+                        >
+                      </div>
+
+                      <div class="mt-4">
+                        <button
+                          class="btn btn-info shadow-0"
+                          type="button"
+                          (click)="addToCart(item)"
+                        >
+                          Buy this
+                        </button>
+                        <a
+                          routerLink="/detail"
+                          class="btn btn-light border px-2 pt-2 icon-hover"
+                          ><i
+                            class="fas fa-heart fa-lg px-1"
+                            style="cursor: pointer"
+                          ></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+</body>
+<app-footer></app-footer>

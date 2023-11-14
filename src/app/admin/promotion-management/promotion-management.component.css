@@ -1,0 +1,10 @@
+.table tbody tr {
+    transition: background-color 0.3s, font-weight 0.3s, transform 0.3s;
+}
+
+.table tbody tr:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ khi hover */
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+    transition: box-shadow 0.3s, transform 0.3s; /* Thời gian chuyển đổi */
+    cursor: pointer;
+  }

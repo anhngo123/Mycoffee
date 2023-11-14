@@ -1,0 +1,105 @@
+<div class="container-fluid p-0 nav-bar">
+  <nav class="navbar navbar-expand-lg py-3" style="background-color: black">
+    <a href="index.html" class="navbar-brand px-lg-4 m-0">
+      <h1 class="m-0 display-4 text-uppercase text-white">CMT8</h1>
+    </a>
+    <button
+      type="button"
+      class="navbar-toggler"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarCollapse"
+    >
+      <div class="navbar-nav ml-auto p-4">
+        <a href="#" class="nav-item nav-link">Company</a>
+        <a
+          routerLink="/store"
+          class="nav-item nav-link"
+          *ngIf="!isAdminUserBranch"
+        >
+          Home</a
+        >
+        <a
+          routerLink="/menu-agency"
+          class="nav-item nav-link"
+          *ngIf="!isAdminUserBranch"
+          >Menu</a
+        >
+        <a
+          routerLink="/voucher-agency"
+          class="nav-item nav-link"
+          *ngIf="!isAdminUserBranch"
+          >Voucher</a
+        >
+        <a
+          routerLink="/blog-agency"
+          class="nav-item nav-link"
+          *ngIf="!isAdminUserBranch"
+          >Blog</a
+        >
+
+        <div *ngIf="user$ | async as user" class="d-flex align-items-center ab">
+          <div class="dropdown" (click)="toggleDropdown()">
+            <button
+              id="dropdownButton"
+              class="btn btn-link dropdown-toggle"
+              type="button"
+            >
+              <span class="user-name pr-2">{{ displayName }}</span>
+            </button>
+            <ul
+              id="dropdownMenu"
+              class="dropdown-menu"
+              [ngClass]="{ show: isDropdownOpen }"
+            >
+              <li *ngIf="!isAdminUserBranch">
+                <a class="dropdown-item" routerLink="/dashboard"
+                  >Trang cá nhân</a
+                >
+              </li>
+              <li *ngIf="isAdminUserBranch">
+                <a class="dropdown-item" routerLink="/admin-agency"
+                  >AdminBranch</a
+                >
+              </li>
+              <li>
+                <a
+                  (click)="logout()"
+                  class="dropdown-item"
+                  style="cursor: pointer"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Conditionally display a bell icon for admins -->
+          <div
+            *ngIf="isAdminUserBranch"
+            class="admin-icon ml-3"
+            style="margin-left: 30px"
+          ></div>
+        </div>
+        <div class="header__right__widget">
+          <li *ngIf="isAdminUserBranch">
+            <a routerLink="/admin-agency"
+              ><span class="fas fa-bell"></span>
+              <div class="tip">{{ notificationCount }}</div>
+            </a>
+          </li>
+          <li *ngIf="!isAdminUserBranch">
+            <a routerLink="/cart-agency"
+              ><span class="fas fa-shopping-cart"></span>
+              <div class="tip">{{ cartItemCount }}</div>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
